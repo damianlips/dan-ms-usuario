@@ -61,7 +61,7 @@ public class ClienteRest {
 	                .stream()
 	                .filter(unCli -> unCli.getRazonSocial().equals(razonSocial))
 	                .collect(Collectors.toList());
-	    	return(c.isEmpty()? ResponseEntity.of(Optional.empty()) : ResponseEntity.of(Optional.of(c)));
+	    	return(c.isEmpty()? ResponseEntity.notFound().build() : ResponseEntity.ok(c) );
 	    	
 	    }
 	    /*

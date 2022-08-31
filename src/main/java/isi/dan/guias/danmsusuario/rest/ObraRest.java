@@ -88,7 +88,7 @@ public class ObraRest {
     			.filter(pred)
     			.collect(Collectors.toList());
     	
-    	return (obrasBuscadas.isEmpty()? ResponseEntity.of(Optional.empty()) : ResponseEntity.ok(obrasBuscadas) );
+    	return (obrasBuscadas.isEmpty()? ResponseEntity.notFound().build() : ResponseEntity.ok(obrasBuscadas) );
     }
     
 }

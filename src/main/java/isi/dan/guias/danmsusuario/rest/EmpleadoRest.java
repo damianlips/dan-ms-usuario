@@ -81,7 +81,7 @@ public class EmpleadoRest {
 	                .stream()
 	                .filter(unEmpleado -> unEmpleado.getUser().getUser().equals(nombre))
 	                .collect(Collectors.toList());
-	    	return(empleadosBuscados.isEmpty()? ResponseEntity.of(Optional.empty()) : ResponseEntity.ok(empleadosBuscados));  	
+	    	return(empleadosBuscados.isEmpty()? ResponseEntity.notFound().build() : ResponseEntity.ok(empleadosBuscados));  	
 	    }
 	  
 	
